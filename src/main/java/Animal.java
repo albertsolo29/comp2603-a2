@@ -16,7 +16,7 @@ public abstract class Animal {
     private String species;
     private String nickname;
     private String island;
-    private String weightKg;
+    private double weightKg;
     private String healthStatus;
 
     // TODO M4: Declare private ArrayList<String> sightings field
@@ -31,8 +31,35 @@ public abstract class Animal {
      * TODO M4: Initialize sightings list
      */
     public Animal(String species, String nickname, String island, double weightKg, String healthStatus) {
+        if (species==null|| species.trim().isEmpty()){
+            throw new IllegalArgumentException("species must not be null or empty");
+        }
 
+        if (nickname==null|| nickname.trim().isEmpty()){
+            throw new IllegalArgumentException("species must not be null or empty");
+        }
 
+        if (island==null|| island.trim().isEmpty()){
+            throw new IllegalArgumentException("species must not be null or empty");
+        }
+
+        if (weightKg<=0){
+            throw new IllegalArgumentException("species must not be null or empty");
+        }
+
+        if (!"Healthy".equals(healthStatus) && !"Injured".equals(healthStatus) && !"Critical".equals(healthStatus)){
+            throw new IllegalArgumentException("species must not be null or empty");
+        }
+
+        this.animalId = nextId++;
+        this.species = species.trim();
+        this.nickname = nickname.trim();
+        this.island = island.trim();
+        this.weightKg = weightKg;
+        this.healthStatus = healthStatus;
+
+        this.animalId = nextId;
+        nextId++;
 
         // TODO M1: Validate parameters and assign fields
         // TODO M1: Auto-assign animalId from nextId, then increment nextId
@@ -41,6 +68,8 @@ public abstract class Animal {
 
     // TODO M1: Write getters for all fields (getAnimalId, getSpecies, getNickname,
     //          getIsland, getWeightKg, getHealthStatus)
+
+    
 
     // TODO M2: Write setIsland(String island) method
 
