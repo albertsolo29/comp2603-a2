@@ -96,6 +96,10 @@ public abstract class Animal {
 
     // TODO M2: Write setIsland(String island) method
 
+    public void setIsland(String island){
+        this.island = island;
+    }
+
     // TODO M4: Write getSightings() getter that returns the ArrayList<String>
 
     /**
@@ -135,7 +139,8 @@ public abstract class Animal {
     @Override
     public String toString() {
         // TODO M1: Return formatted string
-        return "";
+        return String.format("#%03d %s '%s' (%s) [%s] %.2f kg - %s",
+                animalId, species, nickname, island, getType(), weightKg, healthStatus);
     }
 
     /**
