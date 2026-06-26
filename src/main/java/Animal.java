@@ -110,6 +110,8 @@ public abstract class Animal {
 
     // TODO M4: Write getSightings() getter that returns the ArrayList<String>
 
+
+
     /**
      * Updates the health status after validation.
      * TODO M1: Implement updateHealth
@@ -158,8 +160,14 @@ public abstract class Animal {
      */
     @Override
     public boolean equals(Object obj) {
+
+        if (this == obj) return true;
+        if (!(obj instanceof Animal)) return false;
+
+        Animal other = (Animal) obj;
+        return this.animalId == other.animalId;
         // TODO M5: Implement equality by animalId
-        return false;
+
     }
 
     /**
@@ -167,7 +175,9 @@ public abstract class Animal {
      */
     @Override
     public int hashCode() {
+
+        return Integer.hashCode(animalId);
+
         // TODO M5: Return hash based on animalId
-        return 0;
     }
 }

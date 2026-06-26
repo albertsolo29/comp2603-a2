@@ -53,19 +53,46 @@ public class Bird extends Animal implements Trackable, Relocatable {
     // TODO M4: Implement logSighting(String date, String location)
     //          Appends "date at location" to the sightings list
 
+    public void logSighting(String date, String location) {
+        getSightings().add(date + " at " + location);
+    }
+
     // TODO M4: Implement getSightingCount()
     //          Returns the size of the sightings list
 
+    public int getSightingCount() {
+        return getSightings().size();
+    }
+
     // TODO M4: Implement getLastSighting()
     //          Returns the last entry, or "No sightings recorded" if empty
+
+    public String getLastSighting() {
+        if (getSightings().isEmpty()) {
+            return "No sightings recorded";
+        }
+        return getSightings().get(getSightings().size() - 1);
+    }
 
     // --- Relocatable methods ---
     // TODO M6: Implement canRelocateTo(String targetIsland)
     //          Birds can always be relocated; return true
 
+    public boolean canRelocateTo(String targetIsland) {
+        return true;
+    }
+
     // TODO M6: Implement getRelocationCost()
     //          Returns 500.0 + weightKg * 100.0
 
+    public double getRelocationCost() {
+        return 500.0 + getWeightKg() * 100.0;
+    }
+
     // TODO M6: Implement relocateTo(String island)
     //          Updates the island using setIsland()
+
+    public void relocateTo(String island) {
+        setIsland(island);
+    }
 }

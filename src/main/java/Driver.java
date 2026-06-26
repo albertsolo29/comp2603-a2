@@ -11,9 +11,20 @@ import java.util.ArrayList;
 public class Driver {
     public static void main(String[] args) {
 
-        Animal a1 = new Bird("Scarlet Ibis", "Ruby", "Trinidad", 0.35, "Healthy", 60.0, true);
+        Sanctuary c1 = new Sanctuary("Caroni Bird Sanctuary", "Trinidad", 20);
+
+        Bird a1 = new Bird("Scarlet Ibis", "Ruby", "Trinidad", 0.35, "Healthy", 60.0, true);
+        Bird a2 = new Bird("Scarlet Ibis", "Ruby", "Jamaica", 0.35, "Healthy", 60.0, true);
+        Marine a3 = new Marine("Leatherback Turtle", "Atlas", "Trinidad", 500.0, "Healthy", 1200.0, 8000);
 
         System.out.println(a1.toString());
+        System.out.println(c1.addAnimal(a1));
+        System.out.println(c1.addAnimal(a2));
+
+        System.out.println(a1.canRelocateTo("Jamaica"));
+        System.out.println(a2.canRelocateTo("Jamaica"));
+        System.out.println(a3.canRelocateTo("Jamaica"));
+
 
         // TODO M9: Create two sanctuaries:
         //   "Caroni Bird Sanctuary", Trinidad, capacity 20
