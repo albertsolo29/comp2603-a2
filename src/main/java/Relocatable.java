@@ -7,6 +7,11 @@
  *   - void relocateTo(String island)
  */
 public interface Relocatable {
+
+    boolean canRelocateTo(String targetIsland);
+    double getRelocationCost();
+    void relocateTo(String island);
+
     // TODO M3: Declare canRelocateTo method
 
     // TODO M3: Declare getRelocationCost method

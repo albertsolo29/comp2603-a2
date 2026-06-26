@@ -21,6 +21,8 @@ public abstract class Animal {
 
     // TODO M4: Declare private ArrayList<String> sightings field
 
+    private ArrayList<String> sightings;
+
     /**
      * Constructor: assigns auto-incremented ID, validates all parameters.
      * Species, nickname, island must not be null or empty.
@@ -61,9 +63,15 @@ public abstract class Animal {
         this.animalId = nextId;
         nextId++;
 
+        this.sightings = new ArrayList<>();
+
         // TODO M1: Validate parameters and assign fields
         // TODO M1: Auto-assign animalId from nextId, then increment nextId
         // TODO M4: Initialize sightings ArrayList
+    }
+
+    protected ArrayList<String> getSightings() {
+        return sightings;
     }
 
     // TODO M1: Write getters for all fields (getAnimalId, getSpecies, getNickname,
