@@ -35,8 +35,8 @@ public class Bird extends Animal /* TODO M3: implements Trackable, Relocatable *
     /**
      * TODO M2: Implement getType() - returns "Bird"
      */
-
-    public String getTYPE(){
+    @Override
+    public String getType(){
         return "Bird";
     }
     /**
@@ -44,6 +44,7 @@ public class Bird extends Animal /* TODO M3: implements Trackable, Relocatable *
      * TODO M2: Implement getDailyFoodCostTTD()
      */
 
+    @Override
     public double getDailyFoodCostTTD(){
         return 15.0 + getWeightKg() * 50.0;
     }

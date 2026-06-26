@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public abstract class Animal {
     // TODO M1: Declare static nextId field, starting at 1
-    private static int nextId=1;
+    private static int nextId=0;
 
 
     // TODO M1: Declare private fields:
