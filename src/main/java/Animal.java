@@ -36,19 +36,19 @@ public abstract class Animal {
         }
 
         if (nickname==null|| nickname.trim().isEmpty()){
-            throw new IllegalArgumentException("species must not be null or empty");
+            throw new IllegalArgumentException("nickname must not be null or empty");
         }
 
         if (island==null|| island.trim().isEmpty()){
-            throw new IllegalArgumentException("species must not be null or empty");
+            throw new IllegalArgumentException("island must not be null or empty");
         }
 
         if (weightKg<=0){
-            throw new IllegalArgumentException("species must not be null or empty");
+            throw new IllegalArgumentException("weight must be more than 0");
         }
 
         if (!"Healthy".equals(healthStatus) && !"Injured".equals(healthStatus) && !"Critical".equals(healthStatus)){
-            throw new IllegalArgumentException("species must not be null or empty");
+            throw new IllegalArgumentException("Health status must be Healthy, Injured, or Critical.");
         }
 
         this.animalId = nextId++;
@@ -69,7 +69,30 @@ public abstract class Animal {
     // TODO M1: Write getters for all fields (getAnimalId, getSpecies, getNickname,
     //          getIsland, getWeightKg, getHealthStatus)
 
-    
+    public int getAnimalId() {
+        return animalId;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public String getIsland() {
+        return island;
+    }
+
+    public double getWeightKg() {
+        return weightKg;
+    }
+
+
+    public String getHealthStatus() {
+        return healthStatus;
+    }
 
     // TODO M2: Write setIsland(String island) method
 
@@ -80,7 +103,15 @@ public abstract class Animal {
      * TODO M1: Implement updateHealth
      */
     public void updateHealth(String newStatus) {
+        if (!"Healthy".equals(newStatus) && !"Injured".equals(newStatus) && !"Critical".equals(newStatus)){
+            throw new IllegalArgumentException("Health status must be Healthy, Injured, or Critical.");
+        }
+
+        this.healthStatus=newStatus;
+
+
         // TODO M1: Validate newStatus and update the field
+
     }
 
     /**
