@@ -14,16 +14,29 @@ public class Driver {
         Sanctuary c1 = new Sanctuary("Caroni Bird Sanctuary", "Trinidad", 20);
 
         Bird a1 = new Bird("Scarlet Ibis", "Ruby", "Trinidad", 0.35, "Healthy", 60.0, true);
-        Bird a2 = new Bird("Scarlet Ibis", "Ruby", "Jamaica", 0.35, "Healthy", 60.0, true);
+        Bird a2 = new Bird("Scarlet Ibis", "Ruby", "Trinidad", 0.40, "Healthy", 60.0, true);
+        Bird a4 = new Bird("Scarlet Ibis", "Ruby", "Trinidad", 0.25, "Healthy", 60.0, true);
         Marine a3 = new Marine("Leatherback Turtle", "Atlas", "Trinidad", 500.0, "Healthy", 1200.0, 8000);
+        Reptile a5 = new Reptile("Spectacled Caiman", "Brutus", "Trinidad", 45.0, "Healthy", false, 180.0);
+        Reptile a6 = new Reptile("Spectacled Caiman", "Brutus", "Trinidad", 30.0, "Healthy", false, 180.0);
+
 
         System.out.println(a1.toString());
         System.out.println(c1.addAnimal(a1));
         System.out.println(c1.addAnimal(a2));
-
+        c1.addAnimal(a3);
+        c1.addAnimal(a4);
+        c1.addAnimal(a5);
+        c1.addAnimal(a6);
         System.out.println(a1.canRelocateTo("Jamaica"));
         System.out.println(a2.canRelocateTo("Jamaica"));
         System.out.println(a3.canRelocateTo("Jamaica"));
+
+        System.out.println("---------------");
+
+        System.out.println(c1.getDailyFoodBudget());
+        System.out.println(c1.getMostExpensiveAnimal());
+
 
 
         // TODO M9: Create two sanctuaries:
