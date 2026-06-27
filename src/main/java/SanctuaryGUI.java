@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class SanctuaryGUI extends JFrame {
     // TODO M10: Declare private Sanctuary field
+    private Sanctuary sanctuary;
 
     // TODO M9: Declare GUI components:
     //   JTextField nameField
@@ -21,6 +22,12 @@ public class SanctuaryGUI extends JFrame {
     //   JButton searchButton
     //   JTextArea resultArea
     //   JLabel statusLabel
+    private JTextField nameField;
+    private JComboBox<String> typeCombo;
+    private JCheckBox injuredCheck;
+    private JButton searchButton;
+    private JTextArea resultArea;
+    private JLabel statusLabel;
 
     public SanctuaryGUI() {
         super("Caribbean Wildlife Conservation Tracker");
